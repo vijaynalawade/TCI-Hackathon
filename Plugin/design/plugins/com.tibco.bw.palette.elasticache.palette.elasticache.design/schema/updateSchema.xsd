@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:tns="http://www.tibco.com/Elasticache/update" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.tibco.com/Elasticache/update">
+  <xsd:element name="updateInput">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="key" type="xsd:string"/>
+        <xsd:element name="value" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="updateOutput">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="response" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

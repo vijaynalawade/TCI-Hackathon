@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Overridable true -->
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" factory="com.tibco.bw.palette.elasticache.put" name="bw.elasticache.put">
+   <implementation class="com.tibco.bw.palette.elasticache.palette.elasticache.runtime.putAsynchronousActivity"/>
+   <property name="activityTypeID" type="String" value="bw.elasticache.put"/>
+   <property name="modelPackageClass" type="String" value="com.tibco.bw.palette.elasticache.palette.elasticache.model.elasticache.ElasticachePackage"/>
+   <property name="runtimeClass" type="String" value="com.tibco.bw.palette.elasticache.palette.elasticache.runtime.putAsynchronousActivity"/>
+</scr:component>
