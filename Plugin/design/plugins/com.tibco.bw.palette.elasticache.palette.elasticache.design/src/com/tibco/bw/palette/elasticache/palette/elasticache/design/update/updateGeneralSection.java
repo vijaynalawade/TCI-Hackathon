@@ -86,7 +86,7 @@ public class updateGeneralSection extends AbstractBWTransactionalSection {
 		Composite parent = BWFieldFactory.getInstance()
 				.createComposite(root, 2);
 		BWFieldFactory.getInstance().createLabel(parent,
-				Messages.UPDATE_CONNECTION, false);
+				Messages.UPDATE_CONNECTION, true);
 		connectionField = BWFieldFactory.getInstance().createTextBox(parent);
 		connection = BWFieldFactory.getInstance().createAttributeBindingField(
 				parent, connectionField,

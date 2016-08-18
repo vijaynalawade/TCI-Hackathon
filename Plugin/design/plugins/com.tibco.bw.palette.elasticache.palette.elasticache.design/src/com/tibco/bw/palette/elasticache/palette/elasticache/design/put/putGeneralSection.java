@@ -86,7 +86,7 @@ public class putGeneralSection extends AbstractBWTransactionalSection {
 		Composite parent = BWFieldFactory.getInstance()
 				.createComposite(root, 2);
 		BWFieldFactory.getInstance().createLabel(parent,
-				Messages.PUT_CONNECTION, false);
+				Messages.PUT_CONNECTION, true);
 		connectionField = BWFieldFactory.getInstance().createTextBox(parent);
 		connection = BWFieldFactory.getInstance().createAttributeBindingField(
 				parent, connectionField,
