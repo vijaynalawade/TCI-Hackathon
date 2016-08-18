@@ -101,28 +101,28 @@
          point="com.tibco.bw.design.ActivityTypeConfigEMF">
       <config
             activityTypeID="bw.elasticache.get"
-            eClassName="get"
+            eClassName="Get"
             ePackageNSURI="http://ns.tibco.com/bw/palette/elasticache"
             instanceName="%elasticache.activity.default.get.name"
             modelHelperClass="com.tibco.bw.palette.elasticache.palette.elasticache.design.get.getModelHelper">
       </config>
       <config
             activityTypeID="bw.elasticache.put"
-            eClassName="put"
+            eClassName="Set"
             ePackageNSURI="http://ns.tibco.com/bw/palette/elasticache"
             instanceName="%elasticache.activity.default.put.name"
             modelHelperClass="com.tibco.bw.palette.elasticache.palette.elasticache.design.put.putModelHelper">
       </config>
       <config
             activityTypeID="bw.elasticache.delete"
-            eClassName="delete"
+            eClassName="Delete"
             ePackageNSURI="http://ns.tibco.com/bw/palette/elasticache"
             instanceName="%elasticache.activity.default.delete.name"
             modelHelperClass="com.tibco.bw.palette.elasticache.palette.elasticache.design.delete.deleteModelHelper">
       </config>
       <config
             activityTypeID="bw.elasticache.update"
-            eClassName="update"
+            eClassName="Update"
             ePackageNSURI="http://ns.tibco.com/bw/palette/elasticache"
             instanceName="%elasticache.activity.default.update.name"
             modelHelperClass="com.tibco.bw.palette.elasticache.palette.elasticache.design.update.updateModelHelper">

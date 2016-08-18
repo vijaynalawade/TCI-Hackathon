@@ -19,27 +19,35 @@
          point="com.tibco.bw.model.ActivityIcon">
     <activityIcon
             activityTypeID="bw.elasticache.get"
-            diagramIcon="icons/obj48/elasticache_get_48x48.png"
-            largeIcon="icons/obj32/elasticache_get_32x32.png"
-            smallIcon="icons/obj16/elasticache_get_16x16.png">
+            diagramIcon="icons/obj48/get_48x48.png"
+            largeIcon="icons/obj32/get_32x32.png"
+            smallIcon="icons/obj16/get_16x16.png">
       </activityIcon>
     <activityIcon
             activityTypeID="bw.elasticache.put"
-            diagramIcon="icons/obj48/elasticache_put_48x48.png"
-            largeIcon="icons/obj32/elasticache_put_32x32.png"
-            smallIcon="icons/obj16/elasticache_put_16x16.png">
+            diagramIcon="icons/obj48/put_48x48.png"
+            largeIcon="icons/obj32/put_32x32.png"
+            smallIcon="icons/obj16/put_16x16.png">
       </activityIcon>
     <activityIcon
             activityTypeID="bw.elasticache.delete"
-            diagramIcon="icons/obj48/elasticache_delete_48x48.png"
-            largeIcon="icons/obj32/elasticache_delete_32x32.png"
-            smallIcon="icons/obj16/elasticache_delete_16x16.png">
+            diagramIcon="icons/obj48/delete_48x48.png"
+            largeIcon="icons/obj32/delete_32x32.png"
+            smallIcon="icons/obj16/delete_16x16.png">
       </activityIcon>
     <activityIcon
             activityTypeID="bw.elasticache.update"
-            diagramIcon="icons/obj48/elasticache_update_48x48.png"
-            largeIcon="icons/obj32/elasticache_update_32x32.png"
-            smallIcon="icons/obj16/elasticache_update_16x16.png">
+            diagramIcon="icons/obj48/update_48x48.png"
+            largeIcon="icons/obj32/update_32x32.png"
+            smallIcon="icons/obj16/update_16x16.png">
       </activityIcon>
     </extension>
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated elasticache.activity -->
+      <package
+            uri="http://ns.tibco.com/bw/palette/elasticache"
+            class="com.tibco.bw.palette.elasticache.model.elasticache.ElasticachePackage"
+            genModel="model/elasticache.activity.genmodel"/>
+   </extension>
+
 </plugin>

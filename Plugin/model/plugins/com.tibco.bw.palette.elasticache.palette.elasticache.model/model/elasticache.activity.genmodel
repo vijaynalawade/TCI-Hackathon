@@ -1,33 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/com.tibco.bw.palette.elasticache.palette.elasticache.model/src"
-    modelPluginID="com.tibco.bw.palette.elasticache.palette.elasticache.model" importerID="org.eclipse.emf.importer.ecore"
-    bundleManifest="false" complianceLevel="6.0" copyrightFields="false" runtimeVersion="2.4">
-  <genPackages prefix="Elasticache" basePackage="com.tibco.bw.palette.elasticache.palette.elasticache.model"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/com.tibco.bw.palette.elasticache.model/src" editorDirectory="/com.tibco.bw.palette.elasticache.model.editor/src"
+    modelPluginID="com.tibco.bw.palette.elasticache.model" modelPluginClass="" testsDirectory="/com.tibco.bw.palette.elasticache.model.tests/src"
+    importerID="org.eclipse.emf.importer.ecore" bundleManifest="false" complianceLevel="6.0"
+    copyrightFields="false" runtimeVersion="2.4">
+  <genPackages prefix="Elasticache" basePackage="com.tibco.bw.palette.elasticache.model"
       disposableProviderFactory="true" ecorePackage="elasticache.activity.ecore#/">
-    <genClasses ecoreClass="elasticache.activity.ecore#//get">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute elasticache.activity.ecore#//get/url"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute elasticache.activity.ecore#//get/port"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute elasticache.activity.ecore#//get/username"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute elasticache.activity.ecore#//get/password"/>
+    <genClasses ecoreClass="elasticache.activity.ecore#//Get">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute elasticache.activity.ecore#//Get/connection"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute elasticache.activity.ecore#//Get/username"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute elasticache.activity.ecore#//Get/password"/>
     </genClasses>
-    <genClasses ecoreClass="elasticache.activity.ecore#//put">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute elasticache.activity.ecore#//put/url"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute elasticache.activity.ecore#//put/port"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute elasticache.activity.ecore#//put/username"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute elasticache.activity.ecore#//put/password"/>
+    <genClasses ecoreClass="elasticache.activity.ecore#//Set">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute elasticache.activity.ecore#//Set/connection"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute elasticache.activity.ecore#//Set/username"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute elasticache.activity.ecore#//Set/password"/>
     </genClasses>
-    <genClasses ecoreClass="elasticache.activity.ecore#//delete">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute elasticache.activity.ecore#//delete/url"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute elasticache.activity.ecore#//delete/port"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute elasticache.activity.ecore#//delete/username"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute elasticache.activity.ecore#//delete/password"/>
+    <genClasses ecoreClass="elasticache.activity.ecore#//Delete">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute elasticache.activity.ecore#//Delete/connection"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute elasticache.activity.ecore#//Delete/username"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute elasticache.activity.ecore#//Delete/password"/>
     </genClasses>
-    <genClasses ecoreClass="elasticache.activity.ecore#//update">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute elasticache.activity.ecore#//update/url"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute elasticache.activity.ecore#//update/port"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute elasticache.activity.ecore#//update/username"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute elasticache.activity.ecore#//update/password"/>
+    <genClasses ecoreClass="elasticache.activity.ecore#//Update">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute elasticache.activity.ecore#//Update/connection"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute elasticache.activity.ecore#//Update/username"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute elasticache.activity.ecore#//Update/password"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

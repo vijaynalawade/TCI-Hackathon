@@ -1,9 +1,10 @@
 package com.tibco.bw.palette.elasticache.palette.elasticache.design.delete;
 
 import org.eclipse.emf.ecore.EObject;
+
 import com.tibco.bw.design.api.BWAbstractModelHelper;
-import com.tibco.bw.palette.elasticache.palette.elasticache.model.elasticache.ElasticacheFactory;
-import com.tibco.bw.palette.elasticache.palette.elasticache.model.elasticache.delete;
+import com.tibco.bw.palette.elasticache.model.elasticache.Delete;
+import com.tibco.bw.palette.elasticache.model.elasticache.ElasticacheFactory;
 
 public class deleteModelHelper extends BWAbstractModelHelper {
 
@@ -19,7 +20,7 @@ public class deleteModelHelper extends BWAbstractModelHelper {
 	 */
     @Override
     public EObject createInstance() {
-        delete activity = ElasticacheFactory.eINSTANCE.createdelete();
+        Delete activity = ElasticacheFactory.eINSTANCE.createDelete();
         // begin-custom-code
         // end-custom-code
         return activity;

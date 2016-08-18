@@ -1,9 +1,10 @@
 package com.tibco.bw.palette.elasticache.palette.elasticache.design.put;
 
 import org.eclipse.emf.ecore.EObject;
+
 import com.tibco.bw.design.api.BWAbstractModelHelper;
-import com.tibco.bw.palette.elasticache.palette.elasticache.model.elasticache.ElasticacheFactory;
-import com.tibco.bw.palette.elasticache.palette.elasticache.model.elasticache.put;
+import com.tibco.bw.palette.elasticache.model.elasticache.ElasticacheFactory;
+import com.tibco.bw.palette.elasticache.model.elasticache.Set;
 
 public class putModelHelper extends BWAbstractModelHelper {
 
@@ -19,7 +20,7 @@ public class putModelHelper extends BWAbstractModelHelper {
 	 */
     @Override
     public EObject createInstance() {
-        put activity = ElasticacheFactory.eINSTANCE.createput();
+        Set activity = ElasticacheFactory.eINSTANCE.createSet();
         // begin-custom-code
         // end-custom-code
         return activity;

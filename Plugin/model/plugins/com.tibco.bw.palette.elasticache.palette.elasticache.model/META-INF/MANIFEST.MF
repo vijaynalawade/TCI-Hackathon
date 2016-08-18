@@ -7,11 +7,6 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
-Export-Package: 
- com.tibco.bw.palette.elasticache.palette.elasticache.model.elasticache;version="1.0.0",
- com.tibco.bw.palette.elasticache.palette.elasticache.model.elasticache.impl;version="1.0.0",
- com.tibco.bw.palette.elasticache.palette.elasticache.model.elasticache.util;version="1.0.0",
- com.tibco.bw.palette.elasticache.palette.elasticache.model.utils
 Import-Package: 
  com.tibco.bw.validation;version="[6.0.0,7.0.0)",
  com.tibco.bw.validation.exception;version="[6.0.0,7.0.0)",
@@ -26,3 +21,5 @@ Import-Package:
  org.eclipse.emf.ecore.plugin;version="[0.0.0,3.0.0)",
   org.eclipse.osgi.util;version="[0.0.0,2.0.0)"
 Provide-Capability: com.tibco.bw.model; name=bw.elasticache
+Export-Package: com.tibco.bw.palette.elasticache.model.elasticache;version="1.0.0";uses:="com.tibco.bw.validation.process",
+ com.tibco.bw.palette.elasticache.model.elasticache.utils;version="1.0.0"

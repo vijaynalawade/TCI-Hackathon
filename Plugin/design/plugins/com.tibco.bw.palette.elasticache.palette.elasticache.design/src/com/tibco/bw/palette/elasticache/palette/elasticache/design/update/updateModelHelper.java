@@ -1,9 +1,10 @@
 package com.tibco.bw.palette.elasticache.palette.elasticache.design.update;
 
 import org.eclipse.emf.ecore.EObject;
+
 import com.tibco.bw.design.api.BWAbstractModelHelper;
-import com.tibco.bw.palette.elasticache.palette.elasticache.model.elasticache.ElasticacheFactory;
-import com.tibco.bw.palette.elasticache.palette.elasticache.model.elasticache.update;
+import com.tibco.bw.palette.elasticache.model.elasticache.ElasticacheFactory;
+import com.tibco.bw.palette.elasticache.model.elasticache.Update;
 
 public class updateModelHelper extends BWAbstractModelHelper {
 
@@ -19,7 +20,7 @@ public class updateModelHelper extends BWAbstractModelHelper {
 	 */
     @Override
     public EObject createInstance() {
-        update activity = ElasticacheFactory.eINSTANCE.createupdate();
+        Update activity = ElasticacheFactory.eINSTANCE.createUpdate();
         // begin-custom-code
         // end-custom-code
         return activity;
