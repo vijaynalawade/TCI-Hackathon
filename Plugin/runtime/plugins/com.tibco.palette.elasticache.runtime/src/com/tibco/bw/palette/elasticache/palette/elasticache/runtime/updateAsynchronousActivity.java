@@ -1,34 +1,36 @@
 package com.tibco.bw.palette.elasticache.palette.elasticache.runtime;
 
-import java.io.Serializable;
 import java.io.IOException;
-import com.tibco.bw.runtime.AsyncActivity;
-import org.genxdm.ProcessingContext;
-import org.genxdm.Model;
-import org.genxdm.io.FragmentBuilder;
-import com.tibco.bw.palette.elasticache.palette.elasticache.runtime.util.PaletteUtil;
-import com.tibco.bw.palette.elasticache.palette.elasticache.runtime.pojo.update.UpdateOutput;
-import com.tibco.bw.runtime.AsyncActivityCompletionNotifier;
-import com.tibco.bw.runtime.ProcessContext;
-import com.tibco.bw.runtime.annotation.Property;
-import com.tibco.bw.runtime.util.SerializableXMLDocument;
-import com.tibco.bw.runtime.ActivityLifecycleFault;
-import com.tibco.bw.runtime.AsyncActivityController;
-import com.tibco.bw.runtime.ActivityFault;
-import com.tibco.bw.runtime.util.XMLUtils;
-import com.tibco.neo.localized.LocalizedMessage;
+import java.io.Serializable;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
-import com.tibco.bw.palette.elasticache.palette.elasticache.model.elasticache.update;
+
+import org.genxdm.Model;
+import org.genxdm.ProcessingContext;
+import org.genxdm.io.FragmentBuilder;
+
+import com.tibco.bw.palette.elasticache.model.elasticache.Set;
+import com.tibco.bw.palette.elasticache.palette.elasticache.runtime.pojo.update.UpdateOutput;
+import com.tibco.bw.palette.elasticache.palette.elasticache.runtime.util.PaletteUtil;
+import com.tibco.bw.runtime.ActivityFault;
+import com.tibco.bw.runtime.ActivityLifecycleFault;
+import com.tibco.bw.runtime.AsyncActivity;
+import com.tibco.bw.runtime.AsyncActivityCompletionNotifier;
+import com.tibco.bw.runtime.AsyncActivityController;
+import com.tibco.bw.runtime.ProcessContext;
+import com.tibco.bw.runtime.annotation.Property;
+import com.tibco.bw.runtime.util.SerializableXMLDocument;
+import com.tibco.bw.runtime.util.XMLUtils;
+import com.tibco.neo.localized.LocalizedMessage;
 
 public class updateAsynchronousActivity<N> extends AsyncActivity<N> implements ElasticacheContants {
 	private ExecutorService threadPool = null;
 	private final ConcurrentHashMap<String, Future<?>> executingTasks = new ConcurrentHashMap<String, Future<?>>();
 	
 	@Property
-	public update activityConfig;
+	public Set activityConfig;
 	
 	
 	
