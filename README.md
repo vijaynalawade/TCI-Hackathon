@@ -7,9 +7,9 @@ ElastiCache (JMS) is a specification about data storage in memory of application
 For more information about AWS ElastiCache adn its configuration. Please refer to:
 https://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/GettingStarted.html
 
-The models supported are:
+##The models supported are:
 
-Set: store or update texts, bytes, objects into memcache with a key and an expiration duration.
-Get: get the data from memcache with a key
-Delete: delete the data from memcache with a key
+ * Set: store or update texts, bytes, objects into memcache with a key and an expiration duration.
+ * Get: get the data from memcache with a key
+ * Delete: delete the data from memcache with a key
 
