@@ -4,6 +4,7 @@ package com.tibco.bw.palette.elasticache.model.elasticache;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 
 /**
@@ -92,13 +93,31 @@ public interface ElasticachePackage extends EPackage {
 	int GET__PASSWORD = 2;
 
 	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GET__TYPE = 3;
+
+	/**
+	 * The feature id for the '<em><b>Value Type QName</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GET__VALUE_TYPE_QNAME = 4;
+
+	/**
 	 * The number of structural features of the '<em>Get</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GET_FEATURE_COUNT = 3;
+	int GET_FEATURE_COUNT = 5;
 
 	/**
 	 * The meta object id for the '{@link com.tibco.bw.palette.elasticache.model.elasticache.impl.SetImpl <em>Set</em>}' class.
@@ -138,13 +157,31 @@ public interface ElasticachePackage extends EPackage {
 	int SET__PASSWORD = 2;
 
 	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SET__TYPE = 3;
+
+	/**
+	 * The feature id for the '<em><b>Value Type QName</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SET__VALUE_TYPE_QNAME = 4;
+
+	/**
 	 * The number of structural features of the '<em>Set</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SET_FEATURE_COUNT = 3;
+	int SET_FEATURE_COUNT = 5;
 
 	/**
 	 * The meta object id for the '{@link com.tibco.bw.palette.elasticache.model.elasticache.impl.DeleteImpl <em>Delete</em>}' class.
@@ -193,50 +230,14 @@ public interface ElasticachePackage extends EPackage {
 	int DELETE_FEATURE_COUNT = 3;
 
 	/**
-	 * The meta object id for the '{@link com.tibco.bw.palette.elasticache.model.elasticache.impl.UpdateImpl <em>Update</em>}' class.
+	 * The meta object id for the '{@link com.tibco.bw.palette.elasticache.model.elasticache.ValueTypes <em>Value Types</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see com.tibco.bw.palette.elasticache.model.elasticache.impl.UpdateImpl
-	 * @see com.tibco.bw.palette.elasticache.model.elasticache.impl.ElasticachePackageImpl#getUpdate()
+	 * @see com.tibco.bw.palette.elasticache.model.elasticache.ValueTypes
+	 * @see com.tibco.bw.palette.elasticache.model.elasticache.impl.ElasticachePackageImpl#getValueTypes()
 	 * @generated
 	 */
-	int UPDATE = 3;
-
-	/**
-	 * The feature id for the '<em><b>Connection</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UPDATE__CONNECTION = 0;
-
-	/**
-	 * The feature id for the '<em><b>Username</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UPDATE__USERNAME = 1;
-
-	/**
-	 * The feature id for the '<em><b>Password</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UPDATE__PASSWORD = 2;
-
-	/**
-	 * The number of structural features of the '<em>Update</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UPDATE_FEATURE_COUNT = 3;
+	int VALUE_TYPES = 3;
 
 
 	/**
@@ -283,6 +284,28 @@ public interface ElasticachePackage extends EPackage {
 	EAttribute getGet_Password();
 
 	/**
+	 * Returns the meta object for the attribute '{@link com.tibco.bw.palette.elasticache.model.elasticache.Get#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Type</em>'.
+	 * @see com.tibco.bw.palette.elasticache.model.elasticache.Get#getType()
+	 * @see #getGet()
+	 * @generated
+	 */
+	EAttribute getGet_Type();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.tibco.bw.palette.elasticache.model.elasticache.Get#getValueTypeQName <em>Value Type QName</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value Type QName</em>'.
+	 * @see com.tibco.bw.palette.elasticache.model.elasticache.Get#getValueTypeQName()
+	 * @see #getGet()
+	 * @generated
+	 */
+	EAttribute getGet_ValueTypeQName();
+
+	/**
 	 * Returns the meta object for class '{@link com.tibco.bw.palette.elasticache.model.elasticache.Set <em>Set</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -324,6 +347,28 @@ public interface ElasticachePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getSet_Password();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.tibco.bw.palette.elasticache.model.elasticache.Set#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Type</em>'.
+	 * @see com.tibco.bw.palette.elasticache.model.elasticache.Set#getType()
+	 * @see #getSet()
+	 * @generated
+	 */
+	EAttribute getSet_Type();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.tibco.bw.palette.elasticache.model.elasticache.Set#getValueTypeQName <em>Value Type QName</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value Type QName</em>'.
+	 * @see com.tibco.bw.palette.elasticache.model.elasticache.Set#getValueTypeQName()
+	 * @see #getSet()
+	 * @generated
+	 */
+	EAttribute getSet_ValueTypeQName();
 
 	/**
 	 * Returns the meta object for class '{@link com.tibco.bw.palette.elasticache.model.elasticache.Delete <em>Delete</em>}'.
@@ -369,47 +414,14 @@ public interface ElasticachePackage extends EPackage {
 	EAttribute getDelete_Password();
 
 	/**
-	 * Returns the meta object for class '{@link com.tibco.bw.palette.elasticache.model.elasticache.Update <em>Update</em>}'.
+	 * Returns the meta object for enum '{@link com.tibco.bw.palette.elasticache.model.elasticache.ValueTypes <em>Value Types</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Update</em>'.
-	 * @see com.tibco.bw.palette.elasticache.model.elasticache.Update
+	 * @return the meta object for enum '<em>Value Types</em>'.
+	 * @see com.tibco.bw.palette.elasticache.model.elasticache.ValueTypes
 	 * @generated
 	 */
-	EClass getUpdate();
-
-	/**
-	 * Returns the meta object for the attribute '{@link com.tibco.bw.palette.elasticache.model.elasticache.Update#getConnection <em>Connection</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Connection</em>'.
-	 * @see com.tibco.bw.palette.elasticache.model.elasticache.Update#getConnection()
-	 * @see #getUpdate()
-	 * @generated
-	 */
-	EAttribute getUpdate_Connection();
-
-	/**
-	 * Returns the meta object for the attribute '{@link com.tibco.bw.palette.elasticache.model.elasticache.Update#getUsername <em>Username</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Username</em>'.
-	 * @see com.tibco.bw.palette.elasticache.model.elasticache.Update#getUsername()
-	 * @see #getUpdate()
-	 * @generated
-	 */
-	EAttribute getUpdate_Username();
-
-	/**
-	 * Returns the meta object for the attribute '{@link com.tibco.bw.palette.elasticache.model.elasticache.Update#getPassword <em>Password</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Password</em>'.
-	 * @see com.tibco.bw.palette.elasticache.model.elasticache.Update#getPassword()
-	 * @see #getUpdate()
-	 * @generated
-	 */
-	EAttribute getUpdate_Password();
+	EEnum getValueTypes();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -468,6 +480,22 @@ public interface ElasticachePackage extends EPackage {
 		EAttribute GET__PASSWORD = eINSTANCE.getGet_Password();
 
 		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute GET__TYPE = eINSTANCE.getGet_Type();
+
+		/**
+		 * The meta object literal for the '<em><b>Value Type QName</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute GET__VALUE_TYPE_QNAME = eINSTANCE.getGet_ValueTypeQName();
+
+		/**
 		 * The meta object literal for the '{@link com.tibco.bw.palette.elasticache.model.elasticache.impl.SetImpl <em>Set</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -500,6 +528,22 @@ public interface ElasticachePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SET__PASSWORD = eINSTANCE.getSet_Password();
+
+		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SET__TYPE = eINSTANCE.getSet_Type();
+
+		/**
+		 * The meta object literal for the '<em><b>Value Type QName</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SET__VALUE_TYPE_QNAME = eINSTANCE.getSet_ValueTypeQName();
 
 		/**
 		 * The meta object literal for the '{@link com.tibco.bw.palette.elasticache.model.elasticache.impl.DeleteImpl <em>Delete</em>}' class.
@@ -536,38 +580,14 @@ public interface ElasticachePackage extends EPackage {
 		EAttribute DELETE__PASSWORD = eINSTANCE.getDelete_Password();
 
 		/**
-		 * The meta object literal for the '{@link com.tibco.bw.palette.elasticache.model.elasticache.impl.UpdateImpl <em>Update</em>}' class.
+		 * The meta object literal for the '{@link com.tibco.bw.palette.elasticache.model.elasticache.ValueTypes <em>Value Types</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see com.tibco.bw.palette.elasticache.model.elasticache.impl.UpdateImpl
-		 * @see com.tibco.bw.palette.elasticache.model.elasticache.impl.ElasticachePackageImpl#getUpdate()
+		 * @see com.tibco.bw.palette.elasticache.model.elasticache.ValueTypes
+		 * @see com.tibco.bw.palette.elasticache.model.elasticache.impl.ElasticachePackageImpl#getValueTypes()
 		 * @generated
 		 */
-		EClass UPDATE = eINSTANCE.getUpdate();
-
-		/**
-		 * The meta object literal for the '<em><b>Connection</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute UPDATE__CONNECTION = eINSTANCE.getUpdate_Connection();
-
-		/**
-		 * The meta object literal for the '<em><b>Username</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute UPDATE__USERNAME = eINSTANCE.getUpdate_Username();
-
-		/**
-		 * The meta object literal for the '<em><b>Password</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute UPDATE__PASSWORD = eINSTANCE.getUpdate_Password();
+		EEnum VALUE_TYPES = eINSTANCE.getValueTypes();
 
 	}
 

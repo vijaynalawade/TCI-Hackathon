@@ -3,14 +3,14 @@
   <xsd:element name="getInput">
     <xsd:complexType>
       <xsd:sequence>
-        <xsd:element name="key" type="xsd:string"/>
+        <xsd:element name="Key" type="xsd:string"/>
       </xsd:sequence>
     </xsd:complexType>
   </xsd:element>
   <xsd:element name="getOutput">
     <xsd:complexType>
       <xsd:sequence>
-        <xsd:element name="value" type="xsd:string"/>
+        <xsd:element name="Value" type="xsd:string"/>
       </xsd:sequence>
     </xsd:complexType>
   </xsd:element>

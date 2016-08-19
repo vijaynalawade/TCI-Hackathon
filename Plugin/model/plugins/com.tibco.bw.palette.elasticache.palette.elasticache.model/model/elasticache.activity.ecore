@@ -43,6 +43,9 @@
         <details key="value" value=""/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//ValueTypes"
+        defaultValueLiteral="Text"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="valueTypeQName" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//QName"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Set">
     <eAnnotations source="dkactivityconfig">
@@ -85,6 +88,9 @@
         <details key="value" value=""/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//ValueTypes"
+        defaultValueLiteral="Text"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="valueTypeQName" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//QName"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Delete">
     <eAnnotations source="dkactivityconfig">
@@ -128,46 +134,10 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Update">
-    <eAnnotations source="dkactivityconfig">
-      <details key="activitytype" value="Asynchronous"/>
-      <details key="schemaType" value="XSD Editor"/>
-      <details key="schemaFile" value="updateSchema.xsd"/>
-      <details key="inputelementname" value="updateInput"/>
-      <details key="outputelementname" value="updateOutput"/>
-      <details key="faultelementname" value=""/>
-      <details key="helpdocuuid" value="74d2e317-6e4a-495f-abd8-7d3d6af23090"/>
-    </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="connection" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-      <eAnnotations source="dkcontrolconfig">
-        <details key="sectionName" value="General"/>
-        <details key="isRequired" value="false"/>
-        <details key="label" value="URL"/>
-        <details key="isModelProperty" value="false"/>
-        <details key="control" value="TextBox"/>
-        <details key="value" value=""/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="username" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-      <eAnnotations source="dkcontrolconfig">
-        <details key="sectionName" value="General"/>
-        <details key="isRequired" value="false"/>
-        <details key="label" value="Username"/>
-        <details key="isModelProperty" value="false"/>
-        <details key="control" value="TextBox"/>
-        <details key="value" value=""/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="password" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-      <eAnnotations source="dkcontrolconfig">
-        <details key="sectionName" value="General"/>
-        <details key="isRequired" value="false"/>
-        <details key="label" value="Password"/>
-        <details key="isModelProperty" value="false"/>
-        <details key="control" value="TextBox"/>
-        <details key="value" value=""/>
-      </eAnnotations>
-    </eStructuralFeatures>
+  <eClassifiers xsi:type="ecore:EEnum" name="ValueTypes">
+    <eLiterals name="TEXT" literal="Text"/>
+    <eLiterals name="XML" value="1"/>
+    <eLiterals name="OBJECT" value="2" literal="Object"/>
+    <eLiterals name="BYTES" value="3" literal="Byets"/>
   </eClassifiers>
 </ecore:EPackage>

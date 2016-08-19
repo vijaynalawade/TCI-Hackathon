@@ -1,4 +1,4 @@
-package com.tibco.bw.palette.elasticache.palette.elasticache.design.update;
+package com.tibco.bw.palette.elasticache.palette.elasticache.design.delete;
 
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Text;
@@ -7,14 +7,14 @@ import com.tibco.bw.design.field.AttributeBindingField;
 import com.tibco.bw.design.field.BWFieldFactory;
 import com.tibco.bw.design.propertysection.AbstractBWTransactionalSection;
 import com.tibco.bw.design.util.PropertyTypeQnameConstants;
+import com.tibco.bw.palette.elasticache.model.elasticache.Delete;
 import com.tibco.bw.palette.elasticache.model.elasticache.ElasticachePackage;
-import com.tibco.bw.palette.elasticache.model.elasticache.Update;
 import com.tibco.bw.palette.elasticache.model.elasticache.utils.Messages;
 
 /**
  * General tab properties for the activity.
  */
-public class updateGeneralSection extends AbstractBWTransactionalSection {
+public class DeleteGeneralSection extends AbstractBWTransactionalSection {
 	/**
 	 * <!-- begin-custom-doc -->
 	 * 
@@ -46,7 +46,7 @@ public class updateGeneralSection extends AbstractBWTransactionalSection {
 
 	@Override
 	protected Class<?> getModelClass() {
-		return Update.class;
+		return Delete.class;
 	}
 
 	/**
@@ -61,11 +61,11 @@ public class updateGeneralSection extends AbstractBWTransactionalSection {
 	@Override
 	protected void initBindings() {
 		getBindingManager().bind(connection, getInput(),
-				ElasticachePackage.Literals.UPDATE__CONNECTION);
+				ElasticachePackage.Literals.DELETE__CONNECTION);
 		getBindingManager().bind(userName, getInput(),
-				ElasticachePackage.Literals.UPDATE__USERNAME);
+				ElasticachePackage.Literals.DELETE__USERNAME);
 		getBindingManager().bind(password, getInput(),
-				ElasticachePackage.Literals.UPDATE__PASSWORD);
+				ElasticachePackage.Literals.DELETE__PASSWORD);
 		// begin-custom-code
 		// end-custom-code
 	}
@@ -86,21 +86,21 @@ public class updateGeneralSection extends AbstractBWTransactionalSection {
 		Composite parent = BWFieldFactory.getInstance()
 				.createComposite(root, 2);
 		BWFieldFactory.getInstance().createLabel(parent,
-				Messages.UPDATE_CONNECTION, true);
+				Messages.DELETE_CONNECTION, true);
 		connectionField = BWFieldFactory.getInstance().createTextBox(parent);
 		connection = BWFieldFactory.getInstance().createAttributeBindingField(
 				parent, connectionField,
 				PropertyTypeQnameConstants.STRING_PRIMITIVE, true);
 
 		BWFieldFactory.getInstance().createLabel(parent,
-				Messages.UPDATE_USERNAME, false);
+				Messages.DELETE_USERNAME, false);
 		usernameField = BWFieldFactory.getInstance().createTextBox(parent);
 		userName = BWFieldFactory.getInstance().createAttributeBindingField(
 				parent, usernameField,
 				PropertyTypeQnameConstants.STRING_PRIMITIVE, true);
 
 		BWFieldFactory.getInstance().createLabel(parent,
-				Messages.UPDATE_PASSWORD, false);
+				Messages.DELETE_PASSWORD, false);
 		passwordField = BWFieldFactory.getInstance().createTextBox(parent);
 		password = BWFieldFactory.getInstance().createAttributeBindingField(
 				parent, passwordField,

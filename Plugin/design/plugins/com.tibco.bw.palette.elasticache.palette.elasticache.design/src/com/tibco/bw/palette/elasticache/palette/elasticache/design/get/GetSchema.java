@@ -1,11 +1,11 @@
-package com.tibco.bw.palette.elasticache.palette.elasticache.design.delete;
+package com.tibco.bw.palette.elasticache.palette.elasticache.design.get;
 import org.eclipse.xsd.XSDElementDeclaration;
 import com.tibco.bw.design.api.BWExtensionActivitySchema;
 import java.io.InputStream;
 import org.eclipse.xsd.XSDSchema;
 
-public class deleteSchema extends BWExtensionActivitySchema {
-	private static deleteSchema INSTANCE = new deleteSchema();
+public class GetSchema extends BWExtensionActivitySchema {
+	private static GetSchema INSTANCE = new GetSchema();
     /**
 	 * <!-- begin-custom-doc -->
 	 * 
@@ -14,7 +14,7 @@ public class deleteSchema extends BWExtensionActivitySchema {
 	 *
 	 * File location.
 	 */
-	private static final String SCHEMA_FILE_PATH = "/schema/deleteSchema.xsd";
+	private static final String SCHEMA_FILE_PATH = "/schema/getSchema.xsd";
     /**
 	 * <!-- begin-custom-doc -->
 	 * 
@@ -23,7 +23,7 @@ public class deleteSchema extends BWExtensionActivitySchema {
 	 *
 	 * The name of the input element.
 	 */
-	private static final String INPUT_TYPE_ELEMENT_NAME = "deleteInput";
+	private static final String INPUT_TYPE_ELEMENT_NAME = "getInput";
     /**
 	 * <!-- begin-custom-doc -->
 	 * 
@@ -32,7 +32,7 @@ public class deleteSchema extends BWExtensionActivitySchema {
 	 *
 	 * The name of the output element.
 	 */
-	private static final String OUTPUT_TYPE_ELEMENT_NAME = "deleteOutput";
+	private static final String OUTPUT_TYPE_ELEMENT_NAME = "getOutput";
     /**
 	 * <!-- begin-custom-doc -->
 	 * 

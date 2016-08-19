@@ -80,10 +80,6 @@ public class ElasticacheAdapterFactory extends AdapterFactoryImpl {
 				return createDeleteAdapter();
 			}
 			@Override
-			public Adapter caseUpdate(Update object) {
-				return createUpdateAdapter();
-			}
-			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -142,20 +138,6 @@ public class ElasticacheAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDeleteAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link com.tibco.bw.palette.elasticache.model.elasticache.Update <em>Update</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see com.tibco.bw.palette.elasticache.model.elasticache.Update
-	 * @generated
-	 */
-	public Adapter createUpdateAdapter() {
 		return null;
 	}
 

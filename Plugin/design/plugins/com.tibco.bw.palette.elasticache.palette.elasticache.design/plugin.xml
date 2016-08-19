@@ -62,17 +62,6 @@
          </palette>
       </activityType>
 
-      <activityType
-            activityTypeID="bw.elasticache.update"
-            name="%elasticache.activity.update.name"
-            type="Standard"
-            priority="100"
-            tooltip="%elasticache.activity.update.tooltip"
-            visible="true">
-         <palette
-               paletteID="bw.elasticache">
-         </palette>
-      </activityType>
 
       
    </extension>
@@ -81,19 +70,15 @@
          point="com.tibco.bw.design.ActivitySignature">
       <signature
             activityTypeID="bw.elasticache.get"
-            signatureClass="com.tibco.bw.palette.elasticache.palette.elasticache.design.get.getSignature">
+            signatureClass="com.tibco.bw.palette.elasticache.palette.elasticache.design.get.GetSignature">
       </signature>
       <signature
             activityTypeID="bw.elasticache.put"
-            signatureClass="com.tibco.bw.palette.elasticache.palette.elasticache.design.put.putSignature">
+            signatureClass="com.tibco.bw.palette.elasticache.palette.elasticache.design.set.SetSignature">
       </signature>
       <signature
             activityTypeID="bw.elasticache.delete"
-            signatureClass="com.tibco.bw.palette.elasticache.palette.elasticache.design.delete.deleteSignature">
-      </signature>
-      <signature
-            activityTypeID="bw.elasticache.update"
-            signatureClass="com.tibco.bw.palette.elasticache.palette.elasticache.design.update.updateSignature">
+            signatureClass="com.tibco.bw.palette.elasticache.palette.elasticache.design.delete.DeleteSignature">
       </signature>
    </extension>
    
@@ -104,28 +89,21 @@
             eClassName="Get"
             ePackageNSURI="http://ns.tibco.com/bw/palette/elasticache"
             instanceName="%elasticache.activity.default.get.name"
-            modelHelperClass="com.tibco.bw.palette.elasticache.palette.elasticache.design.get.getModelHelper">
+            modelHelperClass="com.tibco.bw.palette.elasticache.palette.elasticache.design.get.GetModelHelper">
       </config>
       <config
             activityTypeID="bw.elasticache.put"
             eClassName="Set"
             ePackageNSURI="http://ns.tibco.com/bw/palette/elasticache"
             instanceName="%elasticache.activity.default.put.name"
-            modelHelperClass="com.tibco.bw.palette.elasticache.palette.elasticache.design.put.putModelHelper">
+            modelHelperClass="com.tibco.bw.palette.elasticache.palette.elasticache.design.set.SetModelHelper">
       </config>
       <config
             activityTypeID="bw.elasticache.delete"
             eClassName="Delete"
             ePackageNSURI="http://ns.tibco.com/bw/palette/elasticache"
             instanceName="%elasticache.activity.default.delete.name"
-            modelHelperClass="com.tibco.bw.palette.elasticache.palette.elasticache.design.delete.deleteModelHelper">
-      </config>
-      <config
-            activityTypeID="bw.elasticache.update"
-            eClassName="Update"
-            ePackageNSURI="http://ns.tibco.com/bw/palette/elasticache"
-            instanceName="%elasticache.activity.default.update.name"
-            modelHelperClass="com.tibco.bw.palette.elasticache.palette.elasticache.design.update.updateModelHelper">
+            modelHelperClass="com.tibco.bw.palette.elasticache.palette.elasticache.design.delete.DeleteModelHelper">
       </config>
    </extension>
 
@@ -135,31 +113,37 @@
             contributorId="com.tibco.bw.core.design.process.editor">
          <propertySection
                afterSection="com.tibco.bw.design.activity.general"
-               class="com.tibco.bw.palette.elasticache.palette.elasticache.design.get.getGeneralSection"
-               filter="com.tibco.bw.palette.elasticache.palette.elasticache.design.get.getGeneralSection"
+               class="com.tibco.bw.palette.elasticache.palette.elasticache.design.get.GetGeneralSection"
+               filter="com.tibco.bw.palette.elasticache.palette.elasticache.design.get.GetGeneralSection"
                id="bw.elasticache.get.general"
                tab="tibco.bw.activity.property.tab.general">
          </propertySection>
          <propertySection
                afterSection="com.tibco.bw.design.activity.general"
-               class="com.tibco.bw.palette.elasticache.palette.elasticache.design.put.putGeneralSection"
-               filter="com.tibco.bw.palette.elasticache.palette.elasticache.design.put.putGeneralSection"
+               class="com.tibco.bw.palette.elasticache.palette.elasticache.design.set.SetGeneralSection"
+               filter="com.tibco.bw.palette.elasticache.palette.elasticache.design.set.SetGeneralSection"
                id="bw.elasticache.put.general"
                tab="tibco.bw.activity.property.tab.general">
          </propertySection>
          <propertySection
                afterSection="com.tibco.bw.design.activity.general"
-               class="com.tibco.bw.palette.elasticache.palette.elasticache.design.delete.deleteGeneralSection"
-               filter="com.tibco.bw.palette.elasticache.palette.elasticache.design.delete.deleteGeneralSection"
+               class="com.tibco.bw.palette.elasticache.palette.elasticache.design.delete.DeleteGeneralSection"
+               filter="com.tibco.bw.palette.elasticache.palette.elasticache.design.delete.DeleteGeneralSection"
                id="bw.elasticache.delete.general"
                tab="tibco.bw.activity.property.tab.general">
          </propertySection>
          <propertySection
                afterSection="com.tibco.bw.design.activity.general"
-               class="com.tibco.bw.palette.elasticache.palette.elasticache.design.update.updateGeneralSection"
-               filter="com.tibco.bw.palette.elasticache.palette.elasticache.design.update.updateGeneralSection"
-               id="bw.elasticache.update.general"
-               tab="tibco.bw.activity.property.tab.general">
+               class="com.tibco.bw.palette.elasticache.palette.elasticache.design.set.SetInputEditorSection"
+               filter="com.tibco.bw.palette.elasticache.palette.elasticache.design.set.SetInputEditorSection"
+               id="bw.elasticache.set.input.inputeditor"
+               tab="tibco.bw.activity.property.tab.inputEditor">
+         </propertySection>
+         <propertySection
+               class="com.tibco.bw.palette.elasticache.palette.elasticache.design.get.GetOutputEditorSection"
+               filter="com.tibco.bw.palette.elasticache.palette.elasticache.design.get.GetOutputEditorSection"
+               id="bw.elasticache.get.output.outputeditor"
+               tab="tibco.bw.activity.property.tab.outputEditor">
          </propertySection>
       </propertySections>
    </extension>

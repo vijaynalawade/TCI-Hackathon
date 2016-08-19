@@ -1,4 +1,4 @@
-package com.tibco.bw.palette.elasticache.palette.elasticache.design.update;
+package com.tibco.bw.palette.elasticache.palette.elasticache.design.delete;
 
 import java.util.List;
 
@@ -13,7 +13,7 @@ import com.tibco.bw.model.activityconfig.Configuration;
  * @generated
  * 
  */
-public class updateSignature extends BWActivitySignature {
+public class DeleteSignature extends BWActivitySignature {
 	
 	
 	/**
@@ -67,7 +67,7 @@ public class updateSignature extends BWActivitySignature {
     @Override
     public XSDElementDeclaration getInputType(final Configuration config) {
         XSDElementDeclaration inputType = null;
-        inputType =  updateSchema.getInputType(); 
+        inputType =  DeleteSchema.getInputType(); 
         // begin-custom-code
         // end-custom-code
         return inputType;
@@ -86,7 +86,7 @@ public class updateSignature extends BWActivitySignature {
     @Override
     public XSDElementDeclaration getOutputType(final Configuration config) {
         XSDElementDeclaration outPutType = null;
-        outPutType =  updateSchema.getOutputType();
+        outPutType =  DeleteSchema.getOutputType();
         // begin-custom-code
         // end-custom-code
         return outPutType;

@@ -49,15 +49,6 @@ public interface ElasticacheFactory extends EFactory {
 	Delete createDelete();
 
 	/**
-	 * Returns a new object of class '<em>Update</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Update</em>'.
-	 * @generated
-	 */
-	Update createUpdate();
-
-	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

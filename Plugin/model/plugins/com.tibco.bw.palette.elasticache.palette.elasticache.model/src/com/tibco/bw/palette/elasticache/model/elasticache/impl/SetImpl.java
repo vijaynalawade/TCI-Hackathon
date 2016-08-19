@@ -4,6 +4,9 @@ package com.tibco.bw.palette.elasticache.model.elasticache.impl;
 
 import com.tibco.bw.palette.elasticache.model.elasticache.ElasticachePackage;
 import com.tibco.bw.palette.elasticache.model.elasticache.Set;
+import com.tibco.bw.palette.elasticache.model.elasticache.ValueTypes;
+
+import javax.xml.namespace.QName;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -22,6 +25,8 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *   <li>{@link com.tibco.bw.palette.elasticache.model.elasticache.impl.SetImpl#getConnection <em>Connection</em>}</li>
  *   <li>{@link com.tibco.bw.palette.elasticache.model.elasticache.impl.SetImpl#getUsername <em>Username</em>}</li>
  *   <li>{@link com.tibco.bw.palette.elasticache.model.elasticache.impl.SetImpl#getPassword <em>Password</em>}</li>
+ *   <li>{@link com.tibco.bw.palette.elasticache.model.elasticache.impl.SetImpl#getType <em>Type</em>}</li>
+ *   <li>{@link com.tibco.bw.palette.elasticache.model.elasticache.impl.SetImpl#getValueTypeQName <em>Value Type QName</em>}</li>
  * </ul>
  * </p>
  *
@@ -87,6 +92,46 @@ public class SetImpl extends EObjectImpl implements Set {
 	 * @ordered
 	 */
 	protected String password = PASSWORD_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getType()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final ValueTypes TYPE_EDEFAULT = ValueTypes.TEXT;
+
+	/**
+	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getType()
+	 * @generated
+	 * @ordered
+	 */
+	protected ValueTypes type = TYPE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getValueTypeQName() <em>Value Type QName</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getValueTypeQName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final QName VALUE_TYPE_QNAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getValueTypeQName() <em>Value Type QName</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getValueTypeQName()
+	 * @generated
+	 * @ordered
+	 */
+	protected QName valueTypeQName = VALUE_TYPE_QNAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -175,6 +220,48 @@ public class SetImpl extends EObjectImpl implements Set {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public ValueTypes getType() {
+		return type;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setType(ValueTypes newType) {
+		ValueTypes oldType = type;
+		type = newType == null ? TYPE_EDEFAULT : newType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ElasticachePackage.SET__TYPE, oldType, type));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public QName getValueTypeQName() {
+		return valueTypeQName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setValueTypeQName(QName newValueTypeQName) {
+		QName oldValueTypeQName = valueTypeQName;
+		valueTypeQName = newValueTypeQName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ElasticachePackage.SET__VALUE_TYPE_QNAME, oldValueTypeQName, valueTypeQName));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -184,6 +271,10 @@ public class SetImpl extends EObjectImpl implements Set {
 				return getUsername();
 			case ElasticachePackage.SET__PASSWORD:
 				return getPassword();
+			case ElasticachePackage.SET__TYPE:
+				return getType();
+			case ElasticachePackage.SET__VALUE_TYPE_QNAME:
+				return getValueTypeQName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -204,6 +295,12 @@ public class SetImpl extends EObjectImpl implements Set {
 				return;
 			case ElasticachePackage.SET__PASSWORD:
 				setPassword((String)newValue);
+				return;
+			case ElasticachePackage.SET__TYPE:
+				setType((ValueTypes)newValue);
+				return;
+			case ElasticachePackage.SET__VALUE_TYPE_QNAME:
+				setValueTypeQName((QName)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -226,6 +323,12 @@ public class SetImpl extends EObjectImpl implements Set {
 			case ElasticachePackage.SET__PASSWORD:
 				setPassword(PASSWORD_EDEFAULT);
 				return;
+			case ElasticachePackage.SET__TYPE:
+				setType(TYPE_EDEFAULT);
+				return;
+			case ElasticachePackage.SET__VALUE_TYPE_QNAME:
+				setValueTypeQName(VALUE_TYPE_QNAME_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -244,6 +347,10 @@ public class SetImpl extends EObjectImpl implements Set {
 				return USERNAME_EDEFAULT == null ? username != null : !USERNAME_EDEFAULT.equals(username);
 			case ElasticachePackage.SET__PASSWORD:
 				return PASSWORD_EDEFAULT == null ? password != null : !PASSWORD_EDEFAULT.equals(password);
+			case ElasticachePackage.SET__TYPE:
+				return type != TYPE_EDEFAULT;
+			case ElasticachePackage.SET__VALUE_TYPE_QNAME:
+				return VALUE_TYPE_QNAME_EDEFAULT == null ? valueTypeQName != null : !VALUE_TYPE_QNAME_EDEFAULT.equals(valueTypeQName);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -264,6 +371,10 @@ public class SetImpl extends EObjectImpl implements Set {
 		result.append(username);
 		result.append(", password: ");
 		result.append(password);
+		result.append(", type: ");
+		result.append(type);
+		result.append(", valueTypeQName: ");
+		result.append(valueTypeQName);
 		result.append(')');
 		return result.toString();
 	}

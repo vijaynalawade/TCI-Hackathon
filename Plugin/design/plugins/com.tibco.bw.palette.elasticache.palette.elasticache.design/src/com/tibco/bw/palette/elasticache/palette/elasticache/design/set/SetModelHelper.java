@@ -1,12 +1,12 @@
-package com.tibco.bw.palette.elasticache.palette.elasticache.design.delete;
+package com.tibco.bw.palette.elasticache.palette.elasticache.design.set;
 
 import org.eclipse.emf.ecore.EObject;
 
 import com.tibco.bw.design.api.BWAbstractModelHelper;
-import com.tibco.bw.palette.elasticache.model.elasticache.Delete;
 import com.tibco.bw.palette.elasticache.model.elasticache.ElasticacheFactory;
+import com.tibco.bw.palette.elasticache.model.elasticache.Set;
 
-public class deleteModelHelper extends BWAbstractModelHelper {
+public class SetModelHelper extends BWAbstractModelHelper {
 
 	/**
 	 * <!-- begin-custom-doc -->
@@ -20,7 +20,7 @@ public class deleteModelHelper extends BWAbstractModelHelper {
 	 */
     @Override
     public EObject createInstance() {
-        Delete activity = ElasticacheFactory.eINSTANCE.createDelete();
+        Set activity = ElasticacheFactory.eINSTANCE.createSet();
         // begin-custom-code
         // end-custom-code
         return activity;

@@ -7,13 +7,16 @@ import com.tibco.bw.palette.elasticache.model.elasticache.ElasticacheFactory;
 import com.tibco.bw.palette.elasticache.model.elasticache.ElasticachePackage;
 import com.tibco.bw.palette.elasticache.model.elasticache.Get;
 import com.tibco.bw.palette.elasticache.model.elasticache.Set;
-import com.tibco.bw.palette.elasticache.model.elasticache.Update;
+import com.tibco.bw.palette.elasticache.model.elasticache.ValueTypes;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+
+import org.eclipse.emf.ecore.xml.type.XMLTypePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -48,7 +51,7 @@ public class ElasticachePackageImpl extends EPackageImpl implements ElasticacheP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass updateEClass = null;
+	private EEnum valueTypesEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -95,6 +98,9 @@ public class ElasticachePackageImpl extends EPackageImpl implements ElasticacheP
 		ElasticachePackageImpl theElasticachePackage = (ElasticachePackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ElasticachePackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new ElasticachePackageImpl());
 
 		isInited = true;
+
+		// Initialize simple dependencies
+		XMLTypePackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theElasticachePackage.createPackageContents();
@@ -152,6 +158,24 @@ public class ElasticachePackageImpl extends EPackageImpl implements ElasticacheP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getGet_Type() {
+		return (EAttribute)getEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getGet_ValueTypeQName() {
+		return (EAttribute)getEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getSet() {
 		return setEClass;
 	}
@@ -181,6 +205,24 @@ public class ElasticachePackageImpl extends EPackageImpl implements ElasticacheP
 	 */
 	public EAttribute getSet_Password() {
 		return (EAttribute)setEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSet_Type() {
+		return (EAttribute)setEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSet_ValueTypeQName() {
+		return (EAttribute)setEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -224,35 +266,8 @@ public class ElasticachePackageImpl extends EPackageImpl implements ElasticacheP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getUpdate() {
-		return updateEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getUpdate_Connection() {
-		return (EAttribute)updateEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getUpdate_Username() {
-		return (EAttribute)updateEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getUpdate_Password() {
-		return (EAttribute)updateEClass.getEStructuralFeatures().get(2);
+	public EEnum getValueTypes() {
+		return valueTypesEEnum;
 	}
 
 	/**
@@ -287,21 +302,23 @@ public class ElasticachePackageImpl extends EPackageImpl implements ElasticacheP
 		createEAttribute(getEClass, GET__CONNECTION);
 		createEAttribute(getEClass, GET__USERNAME);
 		createEAttribute(getEClass, GET__PASSWORD);
+		createEAttribute(getEClass, GET__TYPE);
+		createEAttribute(getEClass, GET__VALUE_TYPE_QNAME);
 
 		setEClass = createEClass(SET);
 		createEAttribute(setEClass, SET__CONNECTION);
 		createEAttribute(setEClass, SET__USERNAME);
 		createEAttribute(setEClass, SET__PASSWORD);
+		createEAttribute(setEClass, SET__TYPE);
+		createEAttribute(setEClass, SET__VALUE_TYPE_QNAME);
 
 		deleteEClass = createEClass(DELETE);
 		createEAttribute(deleteEClass, DELETE__CONNECTION);
 		createEAttribute(deleteEClass, DELETE__USERNAME);
 		createEAttribute(deleteEClass, DELETE__PASSWORD);
 
-		updateEClass = createEClass(UPDATE);
-		createEAttribute(updateEClass, UPDATE__CONNECTION);
-		createEAttribute(updateEClass, UPDATE__USERNAME);
-		createEAttribute(updateEClass, UPDATE__PASSWORD);
+		// Create enums
+		valueTypesEEnum = createEEnum(VALUE_TYPES);
 	}
 
 	/**
@@ -327,6 +344,9 @@ public class ElasticachePackageImpl extends EPackageImpl implements ElasticacheP
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
 
+		// Obtain other dependent packages
+		XMLTypePackage theXMLTypePackage = (XMLTypePackage)EPackage.Registry.INSTANCE.getEPackage(XMLTypePackage.eNS_URI);
+
 		// Create type parameters
 
 		// Set bounds for type parameters
@@ -338,21 +358,27 @@ public class ElasticachePackageImpl extends EPackageImpl implements ElasticacheP
 		initEAttribute(getGet_Connection(), ecorePackage.getEString(), "connection", null, 1, 1, Get.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getGet_Username(), ecorePackage.getEString(), "username", null, 0, 1, Get.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getGet_Password(), ecorePackage.getEString(), "password", null, 0, 1, Get.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getGet_Type(), this.getValueTypes(), "type", "Text", 1, 1, Get.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getGet_ValueTypeQName(), theXMLTypePackage.getQName(), "valueTypeQName", null, 0, 1, Get.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(setEClass, Set.class, "Set", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSet_Connection(), ecorePackage.getEString(), "connection", null, 1, 1, Set.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSet_Username(), ecorePackage.getEString(), "username", null, 0, 1, Set.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSet_Password(), ecorePackage.getEString(), "password", null, 0, 1, Set.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSet_Type(), this.getValueTypes(), "type", "Text", 1, 1, Set.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSet_ValueTypeQName(), theXMLTypePackage.getQName(), "valueTypeQName", null, 0, 1, Set.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(deleteEClass, Delete.class, "Delete", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDelete_Connection(), ecorePackage.getEString(), "connection", null, 1, 1, Delete.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDelete_Username(), ecorePackage.getEString(), "username", null, 0, 1, Delete.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDelete_Password(), ecorePackage.getEString(), "password", null, 0, 1, Delete.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(updateEClass, Update.class, "Update", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getUpdate_Connection(), ecorePackage.getEString(), "connection", null, 1, 1, Update.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getUpdate_Username(), ecorePackage.getEString(), "username", null, 0, 1, Update.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getUpdate_Password(), ecorePackage.getEString(), "password", null, 0, 1, Update.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		// Initialize enums and add enum literals
+		initEEnum(valueTypesEEnum, ValueTypes.class, "ValueTypes");
+		addEEnumLiteral(valueTypesEEnum, ValueTypes.TEXT);
+		addEEnumLiteral(valueTypesEEnum, ValueTypes.XML);
+		addEEnumLiteral(valueTypesEEnum, ValueTypes.OBJECT);
+		addEEnumLiteral(valueTypesEEnum, ValueTypes.BYTES);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -407,18 +433,6 @@ public class ElasticachePackageImpl extends EPackageImpl implements ElasticacheP
 			 "outputelementname", "deleteOutput",
 			 "faultelementname", "",
 			 "helpdocuuid", "bc22daf7-3a9d-4ffe-83f7-fc8b3e0f7666"
-		   });	
-		addAnnotation
-		  (updateEClass, 
-		   source, 
-		   new String[] {
-			 "activitytype", "Asynchronous",
-			 "schemaType", "XSD Editor",
-			 "schemaFile", "updateSchema.xsd",
-			 "inputelementname", "updateInput",
-			 "outputelementname", "updateOutput",
-			 "faultelementname", "",
-			 "helpdocuuid", "74d2e317-6e4a-495f-abd8-7d3d6af23090"
 		   });
 	}
 
@@ -520,39 +534,6 @@ public class ElasticachePackageImpl extends EPackageImpl implements ElasticacheP
 		   });	
 		addAnnotation
 		  (getDelete_Password(), 
-		   source, 
-		   new String[] {
-			 "sectionName", "General",
-			 "isRequired", "false",
-			 "label", "Password",
-			 "isModelProperty", "false",
-			 "control", "TextBox",
-			 "value", ""
-		   });	
-		addAnnotation
-		  (getUpdate_Connection(), 
-		   source, 
-		   new String[] {
-			 "sectionName", "General",
-			 "isRequired", "false",
-			 "label", "URL",
-			 "isModelProperty", "false",
-			 "control", "TextBox",
-			 "value", ""
-		   });	
-		addAnnotation
-		  (getUpdate_Username(), 
-		   source, 
-		   new String[] {
-			 "sectionName", "General",
-			 "isRequired", "false",
-			 "label", "Username",
-			 "isModelProperty", "false",
-			 "control", "TextBox",
-			 "value", ""
-		   });	
-		addAnnotation
-		  (getUpdate_Password(), 
 		   source, 
 		   new String[] {
 			 "sectionName", "General",

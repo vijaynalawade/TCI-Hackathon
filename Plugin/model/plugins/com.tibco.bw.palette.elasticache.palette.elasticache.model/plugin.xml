@@ -9,11 +9,12 @@
 -->
 
 <plugin>
-
    <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated elasticache.activity -->
       <package
             uri="http://ns.tibco.com/bw/palette/elasticache"
-            class="com.tibco.bw.palette.elasticache.palette.elasticache.model.elasticache.ElasticachePackage"/>
+            class="com.tibco.bw.palette.elasticache.model.elasticache.ElasticachePackage"
+            genModel="model/elasticache.activity.genmodel"/>
    </extension>
    <extension
          point="com.tibco.bw.model.ActivityIcon">
@@ -35,19 +36,5 @@
             largeIcon="icons/obj32/delete_32x32.png"
             smallIcon="icons/obj16/delete_16x16.png">
       </activityIcon>
-    <activityIcon
-            activityTypeID="bw.elasticache.update"
-            diagramIcon="icons/obj48/update_48x48.png"
-            largeIcon="icons/obj32/update_32x32.png"
-            smallIcon="icons/obj16/update_16x16.png">
-      </activityIcon>
-    </extension>
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated elasticache.activity -->
-      <package
-            uri="http://ns.tibco.com/bw/palette/elasticache"
-            class="com.tibco.bw.palette.elasticache.model.elasticache.ElasticachePackage"
-            genModel="model/elasticache.activity.genmodel"/>
    </extension>
-
 </plugin>

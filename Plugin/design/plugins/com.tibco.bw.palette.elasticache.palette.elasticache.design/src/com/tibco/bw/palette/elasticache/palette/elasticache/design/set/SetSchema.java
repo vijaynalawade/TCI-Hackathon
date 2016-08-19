@@ -1,11 +1,16 @@
-package com.tibco.bw.palette.elasticache.palette.elasticache.design.get;
+package com.tibco.bw.palette.elasticache.palette.elasticache.design.set;
 import org.eclipse.xsd.XSDElementDeclaration;
+import org.eclipse.xsd.XSDSimpleTypeDefinition;
+import org.eclipse.xsd.XSDTypeDefinition;
+
 import com.tibco.bw.design.api.BWExtensionActivitySchema;
+
 import java.io.InputStream;
+
 import org.eclipse.xsd.XSDSchema;
 
-public class getSchema extends BWExtensionActivitySchema {
-	private static getSchema INSTANCE = new getSchema();
+public class SetSchema extends BWExtensionActivitySchema {
+	private static SetSchema INSTANCE = new SetSchema();
     /**
 	 * <!-- begin-custom-doc -->
 	 * 
@@ -14,7 +19,7 @@ public class getSchema extends BWExtensionActivitySchema {
 	 *
 	 * File location.
 	 */
-	private static final String SCHEMA_FILE_PATH = "/schema/getSchema.xsd";
+	private static final String SCHEMA_FILE_PATH = "/schema/putSchema.xsd";
     /**
 	 * <!-- begin-custom-doc -->
 	 * 
@@ -23,7 +28,7 @@ public class getSchema extends BWExtensionActivitySchema {
 	 *
 	 * The name of the input element.
 	 */
-	private static final String INPUT_TYPE_ELEMENT_NAME = "getInput";
+	private static final String INPUT_TYPE_ELEMENT_NAME = "ActivityInput";
     /**
 	 * <!-- begin-custom-doc -->
 	 * 
@@ -32,7 +37,8 @@ public class getSchema extends BWExtensionActivitySchema {
 	 *
 	 * The name of the output element.
 	 */
-	private static final String OUTPUT_TYPE_ELEMENT_NAME = "getOutput";
+	private static final String OUTPUT_TYPE_ELEMENT_NAME = "putOutput";
+	private static final String JAVA_OBJECT_REFERENCE_TYPE = "nativeJavaObjectKey";
     /**
 	 * <!-- begin-custom-doc -->
 	 * 
@@ -48,6 +54,17 @@ public class getSchema extends BWExtensionActivitySchema {
 		XSDElementDeclaration activityInputType = null;
 		if (activitySignatureSchema != null) {
 			activityInputType = activitySignatureSchema.resolveElementDeclaration(INPUT_TYPE_ELEMENT_NAME);
+		}
+		// begin-custom-code
+        // end-custom-code
+		return activityInputType;
+	}
+	
+	public static XSDSimpleTypeDefinition getJavaObjectType() {
+     	XSDSchema activitySignatureSchema = INSTANCE.loadSchema();
+     	XSDSimpleTypeDefinition activityInputType = null;
+		if (activitySignatureSchema != null) {
+			activityInputType = activitySignatureSchema.resolveSimpleTypeDefinition(JAVA_OBJECT_REFERENCE_TYPE);
 		}
 		// begin-custom-code
         // end-custom-code

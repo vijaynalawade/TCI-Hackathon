@@ -1,18 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <xsd:schema xmlns:tns="http://www.tibco.com/Elasticache/put" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.tibco.com/Elasticache/put">
-  <xsd:element name="putInput">
+  <xsd:element name="ActivityInput">
     <xsd:complexType>
       <xsd:sequence>
-        <xsd:element name="key" type="xsd:string"/>
-        <xsd:element name="value" type="xsd:string"/>
+        <xsd:element name="Key" type="xsd:string"/>
+        <xsd:element name="Expiry" type="xsd:int"/>
+        <xsd:element name="Value" type="xsd:string"/>
       </xsd:sequence>
     </xsd:complexType>
   </xsd:element>
-  <xsd:element name="putOutput">
+  <xsd:element name="SetOutput">
     <xsd:complexType>
       <xsd:sequence>
         <xsd:element name="response" type="xsd:string"/>
       </xsd:sequence>
     </xsd:complexType>
   </xsd:element>
+  
+  <simpleType name="nativeJavaObjectKey">
+		<restriction base="string">
+		</restriction>
+  </simpleType>
 </xsd:schema>

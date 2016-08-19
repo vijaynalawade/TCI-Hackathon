@@ -1,20 +1,24 @@
 package com.tibco.bw.palette.elasticache.palette.elasticache.design.get;
 
+import org.eclipse.jface.viewers.ArrayContentProvider;
+import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Text;
 
 import com.tibco.bw.design.field.AttributeBindingField;
 import com.tibco.bw.design.field.BWFieldFactory;
+import com.tibco.bw.design.field.viewer.CustomComboViewer;
 import com.tibco.bw.design.propertysection.AbstractBWTransactionalSection;
 import com.tibco.bw.design.util.PropertyTypeQnameConstants;
 import com.tibco.bw.palette.elasticache.model.elasticache.ElasticachePackage;
 import com.tibco.bw.palette.elasticache.model.elasticache.Get;
+import com.tibco.bw.palette.elasticache.model.elasticache.ValueTypes;
 import com.tibco.bw.palette.elasticache.model.elasticache.utils.Messages;
 
 /**
  * General tab properties for the activity.
  */
-public class getGeneralSection extends AbstractBWTransactionalSection {
+public class GetGeneralSection extends AbstractBWTransactionalSection {
 	/**
 	 * <!-- begin-custom-doc -->
 	 * 
@@ -43,6 +47,8 @@ public class getGeneralSection extends AbstractBWTransactionalSection {
 	private AttributeBindingField connection = null;
 	private AttributeBindingField userName = null;
 	private AttributeBindingField password = null;
+	private CustomComboViewer valueType = null;
+
 
 	@Override
 	protected Class<?> getModelClass() {
@@ -66,6 +72,8 @@ public class getGeneralSection extends AbstractBWTransactionalSection {
 				ElasticachePackage.Literals.GET__USERNAME);
 		getBindingManager().bind(password, getInput(),
 				ElasticachePackage.Literals.GET__PASSWORD);
+		getBindingManager().bindCustomViewer(valueType, getInput(),
+				ElasticachePackage.Literals.GET__TYPE);
 		// begin-custom-code
 		// end-custom-code
 	}
@@ -105,6 +113,20 @@ public class getGeneralSection extends AbstractBWTransactionalSection {
 		password = BWFieldFactory.getInstance().createAttributeBindingField(
 				parent, passwordField,
 				PropertyTypeQnameConstants.STRING_PRIMITIVE, true);
+		
+		BWFieldFactory.getInstance().createLabel(parent, "Value Type", true);
+		valueType = BWFieldFactory.getInstance().createComboViewer(parent);
+		valueType.setContentProvider(new ArrayContentProvider());
+		valueType.setInput(ValueTypes.VALUES);
+		valueType.setLabelProvider(new LabelProvider() {
+			@Override
+			public String getText(Object element) {
+				if (element instanceof ValueTypes) {
+					return ((ValueTypes) element).getLiteral();
+				}
+				return super.getText(element);
+			}
+		});
 
 		// begin-custom-code
 		// end-custom-code

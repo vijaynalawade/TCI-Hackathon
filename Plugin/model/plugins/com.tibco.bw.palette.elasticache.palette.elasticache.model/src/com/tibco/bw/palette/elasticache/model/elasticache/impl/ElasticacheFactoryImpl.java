@@ -5,6 +5,7 @@ package com.tibco.bw.palette.elasticache.model.elasticache.impl;
 import com.tibco.bw.palette.elasticache.model.elasticache.*;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -59,9 +60,38 @@ public class ElasticacheFactoryImpl extends EFactoryImpl implements ElasticacheF
 			case ElasticachePackage.GET: return createGet();
 			case ElasticachePackage.SET: return createSet();
 			case ElasticachePackage.DELETE: return createDelete();
-			case ElasticachePackage.UPDATE: return createUpdate();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object createFromString(EDataType eDataType, String initialValue) {
+		switch (eDataType.getClassifierID()) {
+			case ElasticachePackage.VALUE_TYPES:
+				return createValueTypesFromString(eDataType, initialValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String convertToString(EDataType eDataType, Object instanceValue) {
+		switch (eDataType.getClassifierID()) {
+			case ElasticachePackage.VALUE_TYPES:
+				return convertValueTypesToString(eDataType, instanceValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -100,9 +130,19 @@ public class ElasticacheFactoryImpl extends EFactoryImpl implements ElasticacheF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Update createUpdate() {
-		UpdateImpl update = new UpdateImpl();
-		return update;
+	public ValueTypes createValueTypesFromString(EDataType eDataType, String initialValue) {
+		ValueTypes result = ValueTypes.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertValueTypesToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**
