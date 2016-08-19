@@ -56,7 +56,7 @@ public enum ValueTypes implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	BYTES(3, "BYTES", "Byets");
+	BYTES(3, "BYTES", "Bytes");
 
 	/**
 	 * The '<em><b>TEXT</b></em>' literal value.
