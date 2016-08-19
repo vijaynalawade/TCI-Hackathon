@@ -59,7 +59,7 @@ public class putAsynchronousActivity<N> extends AsyncActivity<N> implements Elas
 		}
 		MemcachedClientWrapper clientWrapper = new MemcachedClientWrapper();
 		HashMap<String, String> moduleProperties =  new HashMap<>();
-		moduleProperties.put(MemcachedClientWrapper.CONNECTION, activityConfig.getUrl()+":"+ activityConfig.getPort()); //change
+		moduleProperties.put(MemcachedClientWrapper.CONNECTION, activityConfig.getConnection()); //change
 		try {
 			clientWrapper.createClient(moduleProperties);
 		} catch (Exception e) {
