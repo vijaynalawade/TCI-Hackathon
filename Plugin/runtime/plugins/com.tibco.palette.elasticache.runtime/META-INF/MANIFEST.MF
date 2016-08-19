@@ -9,10 +9,11 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-Localization: plugin
 Bundle-Name: %pluginName
 Bundle-ManifestVersion: 2
-Import-Package: com.tibco.bw.palette.elasticache.palette.elasticache.model.elasticache,
- com.tibco.bw.runtime.util;version="[6.0.0,7.0.0)",
+Import-Package: com.tibco.bw.palette.elasticache.model.elasticache;version="1.0.0",
+ com.tibco.bw.palette.elasticache.palette.elasticache.model.elasticache,
  com.tibco.bw.runtime;version="[6.0.0,7.0.0)",
  com.tibco.bw.runtime.annotation;version="[6.0.0,7.0.0)",
+ com.tibco.bw.runtime.util;version="[6.0.0,7.0.0)",
  com.tibco.neo.localized;version="[2.5.0,3.0.0)",
  org.eclipse.emf.ecore;version="[2.4.2,3.0.0)",
  org.genxdm;version="[1.0.0,2.0.0)",
