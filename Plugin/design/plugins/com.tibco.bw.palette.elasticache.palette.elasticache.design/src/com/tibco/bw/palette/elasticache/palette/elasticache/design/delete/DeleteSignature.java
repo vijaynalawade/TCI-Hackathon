@@ -50,7 +50,7 @@ public class DeleteSignature extends BWActivitySignature {
     public boolean hasOutput() {
     	// begin-custom-code
         // end-custom-code
-        return true;
+        return false;
     }
      
    /**
