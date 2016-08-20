@@ -52,7 +52,6 @@ public class MemcachedClientWrapper {
 				if(client == null){
 					String connections = (String) moduleProperties
 							.get(CONNECTION);
-					System.out.println(connections);
 					try {
 					client = new MemcachedClient(AddrUtil.getAddresses(connections));
 					} catch(Throwable t) {

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Overridable true -->
 <scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" factory="com.tibco.bw.palette.elasticache.get" name="bw.elasticache.get">
-   <implementation class="com.tibco.bw.palette.elasticache.palette.elasticache.runtime.getAsynchronousActivity"/>
+   <implementation class="com.tibco.bw.palette.elasticache.palette.elasticache.runtime.GetAsynchronousActivity"/>
    <property name="activityTypeID" type="String" value="bw.elasticache.get"/>
    <property name="modelPackageClass" type="String" value="com.tibco.bw.palette.elasticache.palette.elasticache.model.elasticache.ElasticachePackage"/>
-   <property name="runtimeClass" type="String" value="com.tibco.bw.palette.elasticache.palette.elasticache.runtime.getAsynchronousActivity"/>
+   <property name="runtimeClass" type="String" value="com.tibco.bw.palette.elasticache.palette.elasticache.runtime.GetAsynchronousActivity"/>
 </scr:component>
