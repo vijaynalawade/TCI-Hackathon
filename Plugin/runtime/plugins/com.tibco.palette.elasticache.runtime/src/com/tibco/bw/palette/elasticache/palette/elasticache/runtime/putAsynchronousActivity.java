@@ -32,7 +32,7 @@ import com.tibco.bw.runtime.util.SerializableXMLDocument;
 import com.tibco.bw.runtime.util.XMLUtils;
 import com.tibco.neo.localized.LocalizedMessage;
 
-public class putAsynchronousActivity<N> extends AsyncActivity<N> implements
+public class PutAsynchronousActivity<N> extends AsyncActivity<N> implements
 		ElasticacheContants {
 	private ExecutorService threadPool = null;
 	private final ConcurrentHashMap<String, Future<?>> executingTasks = new ConcurrentHashMap<String, Future<?>>();

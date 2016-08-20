@@ -26,7 +26,7 @@ import com.tibco.bw.runtime.util.SerializableXMLDocument;
 import com.tibco.bw.runtime.util.XMLUtils;
 import com.tibco.neo.localized.LocalizedMessage;
 
-public class deleteAsynchronousActivity<N> extends AsyncActivity<N> implements ElasticacheContants {
+public class DeleteAsynchronousActivity<N> extends AsyncActivity<N> implements ElasticacheContants {
 	private ExecutorService threadPool = null;
 	private final ConcurrentHashMap<String, Future<?>> executingTasks = new ConcurrentHashMap<String, Future<?>>();
 	
@@ -59,7 +59,7 @@ public class deleteAsynchronousActivity<N> extends AsyncActivity<N> implements E
 		}
 		MemcachedClientWrapper clientWrapper = new MemcachedClientWrapper();
 		HashMap<String, String> moduleProperties =  new HashMap<>();
-		moduleProperties.put(MemcachedClientWrapper.CONNECTION, activityConfig.getConnection()); //change
+		moduleProperties.put(MemcachedClientWrapper.CONNECTION, activityConfig.getConnection()); 
 		try {
 			clientWrapper.createClient(moduleProperties);
 		} catch (Exception e) {
