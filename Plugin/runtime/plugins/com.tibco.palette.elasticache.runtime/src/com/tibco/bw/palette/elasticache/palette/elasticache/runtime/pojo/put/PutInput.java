@@ -30,8 +30,9 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "key",
-    "value"
+    "Key",
+    "Expiry",
+    "Value"
 })
 @XmlRootElement(name = "putInput", namespace = "http://www.tibco.com/Elasticache/put")
 public class PutInput {
@@ -39,6 +40,16 @@ public class PutInput {
     @XmlElement(required = true)
     protected String key;
     @XmlElement(required = true)
+    protected int Expiry;
+    public int getExpiry() {
+		return Expiry;
+	}
+
+	public void setExpiry(int expiry) {
+		Expiry = expiry;
+	}
+
+	@XmlElement(required = true)
     protected String value;
 
     /**
