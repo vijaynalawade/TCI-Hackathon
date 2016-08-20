@@ -6,11 +6,11 @@ TCI Hackathon 2016
 ![alt text](images/ElastiCachePlugin.png "ElastiCache Plug-in")
 
 
-ElastiCache is a specification about in memory data storage of applications in a Java environment. The ElastiCache Plug-in can be used to set, get and delete data from AWS ElastiCache in TIBCO BusinessWorks process. It uses AWS(memcached) as a datastore.
+ElastiCache is a specification about in memory data storage of applications in a Java environment. The ElastiCache Plug-in can be used to set, get and delete data from **AWS ElastiCache** in **TIBCO BusinessWorks process**. It uses AWS(**memcached**) as a datastore.
 For more information about AWS ElastiCache adn its configuration. Please refer to:
 https://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/GettingStarted.html
 
-##NOTE: No Redis integration yet.
+**`NOTE: No Redis integration yet.`**
 
 ##Operations supported:
 
