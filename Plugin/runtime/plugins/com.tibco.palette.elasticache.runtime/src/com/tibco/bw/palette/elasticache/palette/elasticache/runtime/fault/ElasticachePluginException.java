@@ -1,7 +1,9 @@
 package com.tibco.bw.palette.elasticache.palette.elasticache.runtime.fault;
 
 import javax.xml.namespace.QName;
+
 import org.genxdm.ProcessingContext;
+
 import com.tibco.bw.runtime.ActivityContext;
 import com.tibco.neo.localized.BundleMessage;
 public class ElasticachePluginException extends ElasticacheActivityBaseException 
@@ -13,13 +15,18 @@ public class ElasticachePluginException extends ElasticacheActivityBaseException
 		super(activityContext, code, bundleMessage);
 	}
 	
+	public <N> ElasticachePluginException(ActivityContext<N> activityContext, Integer code, String message) {
+        super(activityContext, code, message);
+    }
+	
 	/**
  	 * <!-- begin-custom-doc -->
 	 * 
 	 * <!-- end-custom-doc -->
 	 * @generated
 	 */
-	public QName getFaultElementQName() {
+	@Override
+    public QName getFaultElementQName() {
 		// begin-custom-code
         // add your own business code here
         // end-custom-code
@@ -35,7 +42,8 @@ public class ElasticachePluginException extends ElasticacheActivityBaseException
 	 * @param processingContext
 	 *			XML processing context.  
 	 */
-	public <N> void buildFault(ProcessingContext<N> pcx) {
+	@Override
+    public <N> void buildFault(ProcessingContext<N> pcx) {
 		N ElasticachePluginException = this.createFaultMessageElement(pcx);
 		
 		this.setData(ElasticachePluginException);

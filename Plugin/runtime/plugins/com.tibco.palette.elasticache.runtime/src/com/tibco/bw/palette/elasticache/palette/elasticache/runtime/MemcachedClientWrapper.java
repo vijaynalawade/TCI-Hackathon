@@ -19,19 +19,12 @@ public class MemcachedClientWrapper {
 
 	public static Object getValue(String key) throws Exception {
 		Object result = client.get(key);
-		if (result == null) {
-			throw new Exception("Failed to get value for Key[" + key
-					+ "]. Value not found.");
-		}
 		return result;
 	}
 
-	public static void deleteValue(String key) throws Exception {
+	public static boolean deleteValue(String key) throws Exception {
 		OperationFuture<Boolean> result = client.delete(key);
-		if (!result.get()) {
-			throw new Exception("Failed to delete value for Key[" + key
-					+ "]. Operation Status=" + result.getStatus().getMessage());
-		}
+		 return result.get();
 	}
 
 	public static boolean setValue(String key, int expiry, Object value)

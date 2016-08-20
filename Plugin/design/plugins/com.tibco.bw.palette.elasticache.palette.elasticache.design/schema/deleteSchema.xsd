@@ -3,14 +3,7 @@
   <xsd:element name="deleteInput">
     <xsd:complexType>
       <xsd:sequence>
-        <xsd:element name="key" type="xsd:string"/>
-      </xsd:sequence>
-    </xsd:complexType>
-  </xsd:element>
-  <xsd:element name="deleteOutput">
-    <xsd:complexType>
-      <xsd:sequence>
-        <xsd:element name="response" type="xsd:string"/>
+        <xsd:element name="Key" type="xsd:string"/>
       </xsd:sequence>
     </xsd:complexType>
   </xsd:element>

@@ -18,6 +18,7 @@ import org.genxdm.typed.TypedContext;
 
 import com.tibco.bw.palette.elasticache.model.elasticache.Get;
 import com.tibco.bw.palette.elasticache.model.elasticache.ValueTypes;
+import com.tibco.bw.palette.elasticache.palette.elasticache.runtime.fault.ElasticachePluginException;
 import com.tibco.bw.palette.elasticache.palette.elasticache.runtime.pojo.get.GetOutput;
 import com.tibco.bw.palette.elasticache.palette.elasticache.runtime.util.PaletteUtil;
 import com.tibco.bw.runtime.ActivityFault;
@@ -300,12 +301,17 @@ public class GetAsynchronousActivity<N> extends AsyncActivity<N> implements Elas
             }
 
             try {
-
-                Object outputData = MemcachedClientWrapper.getValue(getInputParameterStringValueByName(inputData,
-                        processContext.getXMLProcessingContext(), "Key"));
+                String key = getInputParameterStringValueByName(inputData, processContext.getXMLProcessingContext(), "Key");
+                Object outputData = MemcachedClientWrapper.getValue(key);
+                if (outputData == null) {
+                    throw new ElasticachePluginException(activityContext, RuntimeMessageBundle.DATA_NOT_FOUND.getErrorCode(),
+                            RuntimeMessageBundle.DATA_NOT_FOUND.format(key));
+                }
                 N output = evalOutput(inputData, processContext, outputData);
                 SerializableXMLDocument<N> wrapper = new SerializableXMLDocument<N>(processContext.getXMLProcessingContext(), output);
                 notifier.setReady(wrapper);
+            } catch (ActivityFault e) {
+                notifier.setReady(e);
             } catch (Throwable e) {
                 notifier.setReady(new ActivityFault(activityContext, e));
             }
@@ -370,7 +376,7 @@ public class GetAsynchronousActivity<N> extends AsyncActivity<N> implements Elas
          * 
          */
         private static final long serialVersionUID = 5158533499238860304L;
-        Object data;
+        Object                    data;
 
         public CacheSerializableResource(Object data) {
             this.data = data;
