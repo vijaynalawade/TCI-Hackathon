@@ -29,13 +29,13 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "value"
+    "Value"
 })
 @XmlRootElement(name = "getOutput", namespace = "http://www.tibco.com/Elasticache/get")
 public class GetOutput {
 
     @XmlElement(required = true)
-    protected String value;
+    protected String Value;
 
     /**
      * Gets the value of the value property.
@@ -46,7 +46,7 @@ public class GetOutput {
      *     
      */
     public String getValue() {
-        return value;
+        return Value;
     }
 
     /**
@@ -57,8 +57,8 @@ public class GetOutput {
      *     {@link String }
      *     
      */
-    public void setValue(String value) {
-        this.value = value;
+    public void setValue(String Value) {
+        this.Value = Value;
     }
 
 }

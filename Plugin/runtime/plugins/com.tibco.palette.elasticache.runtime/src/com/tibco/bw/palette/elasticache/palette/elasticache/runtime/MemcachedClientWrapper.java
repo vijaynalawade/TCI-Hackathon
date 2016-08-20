@@ -17,11 +17,11 @@ public class MemcachedClientWrapper {
 
 	}
 
-	public static String getValue(String key) throws Exception {
-		String result = (String) client.get(key);
+	public static Object getValue(String key) throws Exception {
+		Object result = client.get(key);
 		if (result == null) {
 			throw new Exception("Failed to get value for Key[" + key
-					+ "]. Key not found.");
+					+ "]. Value not found.");
 		}
 		return result;
 	}
@@ -34,13 +34,10 @@ public class MemcachedClientWrapper {
 		}
 	}
 
-	public static void setValue(String key, int expiry, String value)
+	public static boolean setValue(String key, int expiry, Object value)
 			throws Exception {
 		OperationFuture<Boolean> result = client.set(key, expiry, value);
-		if (!result.get()) {
-			throw new Exception("Failed to set value for Key[" + key
-					+ "]. Operation Status=" + result.getStatus().getMessage());
-		}
+		return result.get();
 	}
 
 	
