@@ -10,7 +10,7 @@ ElastiCache is a specification about in memory data storage of applications in a
 For more information about AWS ElastiCache adn its configuration. Please refer to:
 https://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/GettingStarted.html
 
-**`NOTE: No Redis integration yet.`**
+**`NOTE: No Redis support.`**
 
 ##Operations supported:
 
