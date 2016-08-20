@@ -7,9 +7,13 @@ ElastiCache is a specification about in memory data storage of applications in a
 For more information about AWS ElastiCache adn its configuration. Please refer to:
 https://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/GettingStarted.html
 
-##The models supported are:
+##Operations supported:
 
- * Set: store or update texts, bytes, objects into memcache with a key and an expiration duration.
- * Get: get the data from memcache with a key
- * Delete: delete the data from memcache with a key
+ * Set: Store or Update Text, Bytes, Objects or XML data into memcache with a key and an expiration duration.
+ * Get: Get the data from memcache with a key
+ * Delete: Delete the data from memcache with a key
+ 
+
+## Set Activity:
+
 
